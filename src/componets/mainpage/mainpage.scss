@@ -1,0 +1,29 @@
+@import "../../global.scss";
+
+.main__page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.planets {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: url("../../../assets/mainPageBG.png");
+  @include flex(row, space-between, center);
+
+  &__planet {
+    height: 100%;
+    width: 60%;
+    &-img {
+      height: 100%;
+      width: 40%;
+    }
+  }
+}
+
+.moon {
+  width: 90%;
+}

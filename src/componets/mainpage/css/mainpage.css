@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
+body {
+  background-color: #eee;
+  min-height: 100vh;
+}
+
+.main__page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.planets {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: url("../../../assets/mainPageBG.png");
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.planets__planet {
+  height: 100%;
+  width: 60%;
+}
+.planets__planet-img {
+  height: 100%;
+  width: 40%;
+}
+
+.moon {
+  width: 90%;
+}

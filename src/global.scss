@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //   font-family: ;
+  font-weight: 600;
+  cursor: default;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+
+body {
+  background-color: #eee;
+  min-height: 100vh;
+}
+
+$main_color-blue: #283a97;
+
+@mixin flex($flex-d, $just-c, $align-i) {
+  display: flex;
+  flex-direction: $flex-d; //row / column
+  justify-content: $just-c; //space-between
+  align-items: $align-i; //center
+}
+
+@mixin Container($left, $right, $top, $indent) {
+  @if ($indent == padding) {
+    padding-left: $left;
+    padding-right: $right;
+    padding-top: $top;
+  } @else if ($indent == margin) {
+    margin-left: $left;
+    margin-right: $right;
+    margin-top: $top;
+  }
+}
+
+$mobile_screen: 367px;
+$table_screen: 768px;
+$desctop-small_screen: 1080px;
+$desctop-medium_screen: 1480px;
+$desctop-large_screen: 1860px;
+
+@mixin adaptiv($media) {
+  @if ($media == mobile) {
+    @media (max-width: $mobile_screen) {
+      @content;
+    }
+  } @else if ($media == table) {
+    @media (max-width: $table_screen) {
+      @content;
+    }
+  } @else if ($media == small-pc) {
+    @media (max-width: $table_screen) {
+      @content;
+    }
+  } @else if ($media == medium-pc) {
+    @media (max-width: $desctop-medium_screen) {
+      @content;
+    }
+  } @else if ($media == large-pc) {
+    @media (max-width: $desctop-large_screen) {
+      @content;
+    }
+  }
+}
