@@ -9,7 +9,7 @@ import Arrow from "../../assets/arrow_forward_ios.svg";
 import Burger from "../burger/burger";
 
 function MainPage() {
-  // const [activeBurger, setActiveBurger] = useState("show__burger");
+  // через хук добавить текущее занчение selected, в цикле map проверка, если selected === name, => добавить класс selcted который width 200%
 
   const [burgerClass, setBurgerClass] = useState("hide__burger");
 
@@ -19,34 +19,47 @@ function MainPage() {
     );
   };
 
+  const planetEarth = {
+    src: Earth,
+    name: "earth",
+    classPlanet: "planets__planet earth",
+    classImg: "earth-img",
+  };
+
+  const planetMoon = {
+    src: Moon,
+    name: "moon",
+    classPlanet: "planets__planet moon",
+    classImg: "planets__planet-img",
+  };
+
+  const planetMars = {
+    src: Mars,
+    name: "mars",
+    classPlanet: "planets__planet mars",
+    classImg: "mars-img",
+  };
+
+  const planets = [planetEarth, planetMoon, planetMars];
+
   return (
     <div className="main__page">
       <Header onToggleBurgerClass={toggleBurgerClass} />
       <Burger className={burgerClass} onToggleBurgerClass={toggleBurgerClass} />
 
       <div className="planets">
-        <div className="planets__planet earth">
-          <img
-            src={Earth}
-            alt="earth-img"
-            className="planets__planet-img earth-img"
-          />
-        </div>
-        <div className="planets__planet moon">
-          <img src={Moon} alt="earth" className="planets__planet-img" />
-        </div>
-        <div className="planets__planet mars">
-          <img
-            src={Mars}
-            alt="earth"
-            className="planets__planet-img mars-img"
-          />
-        </div>
+        {planets.map(({ src, classPlanet, classImg }) => {
+          return (
+            <div key={src} className={classPlanet}>
+              <img src={src} alt="earth-img" className={classImg} />
+            </div>
+          );
+        })}
       </div>
 
       <div className="main__info">
         <div className="main__info__line-first">
-          <img src={Line} alt="line1" />
+          <img src={Line} alt="line" />
         </div>
 
         <div className="main__info__text">
