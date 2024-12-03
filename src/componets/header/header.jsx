@@ -1,9 +1,8 @@
-import "./css/header.css";
-import { HeaderButton } from "../headerButton/headerButton";
+import "./header.scss";
 import soundIcon from "../../assets/sound.svg";
 import menuIcon from "../../assets/menu.svg";
 
-function Header() {
+function Header({ onToggleBurgerClass }) {
   return (
     <header className="header">
       <div className="header__text">
@@ -11,8 +10,13 @@ function Header() {
       </div>
 
       <div className="header__buttons">
-        <HeaderButton img={soundIcon} />
-        <HeaderButton img={menuIcon} />
+        <div className="header__link">
+          <img src={menuIcon} onClick={onToggleBurgerClass} alt="img" />
+        </div>
+
+        <div className="header__link">
+          <img src={soundIcon} alt="img" />
+        </div>
       </div>
     </header>
   );

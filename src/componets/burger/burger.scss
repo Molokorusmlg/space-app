@@ -1,0 +1,63 @@
+@import "../../global.scss";
+
+.burger {
+  @include flex(column, center, center);
+  gap: 100px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 200px;
+  height: 50%;
+  background-color: black;
+  border-radius: 5px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+
+  &__arrow {
+    position: absolute;
+    top: 20px;
+    right: -5px;
+    transition: 0.3s ease-in-out;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      transform: translate(5px);
+    }
+
+    &_img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__profile {
+    @include flex(row, center, center);
+    gap: 15px;
+
+    &:hover {
+      & .burger__profile_text {
+        color: #adadad;
+      }
+    }
+
+    &_img {
+      width: 30px;
+      height: 30px;
+    }
+
+    &_text {
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+.hide__burger {
+  right: -200px;
+}
+
+.active__burger {
+  right: 0px;
+}

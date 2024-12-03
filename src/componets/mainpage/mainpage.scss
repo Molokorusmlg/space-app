@@ -11,7 +11,7 @@
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background: url("../../../assets/mainPageBG.png");
+  background: url("../../assets/mainPageBG.png");
   @include flex(row, space-between, center);
 
   &__planet {
@@ -25,5 +25,67 @@
 }
 
 .moon {
-  width: 90%;
+  @include flex(row, center, center);
+  width: 130%;
+}
+
+.earth {
+  @include flex(row, flex-start, center);
+  height: 200%;
+  position: relative;
+  left: -30%;
+
+  &-img {
+    width: 200%;
+    height: 100%;
+  }
+}
+
+.mars {
+  @include flex(row, flex-start, center);
+  height: 200%;
+  position: relative;
+  right: -10%;
+
+  &-img {
+    width: 200%;
+    height: 100%;
+  }
+}
+
+.main__info {
+  @include flex(row, center, center);
+  gap: 1%;
+  position: absolute;
+  bottom: 7%;
+  width: 100%;
+
+  &:hover {
+    & .main__info__text_arrow_img {
+      transform: translate(3px);
+    }
+  }
+
+  &__text {
+    @include flex(column, center, center);
+    gap: 5px;
+    color: #fff;
+    min-width: 10%;
+    width: 20%;
+
+    &_arrow {
+      &_img {
+        transition: 0.4s ease-in-out;
+      }
+    }
+
+    &_title {
+      font-size: 30px;
+    }
+
+    &__button {
+      @include flex(row, center, center);
+      gap: 5px;
+    }
+  }
 }

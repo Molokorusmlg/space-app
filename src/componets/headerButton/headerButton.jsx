@@ -1,4 +1,4 @@
-import "./css/headerButton.css";
+import "./headerButton.scss";
 
 export const HeaderButton = ({ img }) => {
   return (
